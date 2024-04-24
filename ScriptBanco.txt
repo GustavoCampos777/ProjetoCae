@@ -1,0 +1,39 @@
+CREATE TABLE estudante (
+  matricula varchar(16) NOT NULL PRIMARY KEY,
+  nome varchar(50) NOT NULL,
+  foto varchar(50) NOT NULL,
+  contato_celular varchar(14) NOT NULL,
+  contato_responsaveis varchar(14) NOT NULL,
+  contato_email varchar(100) NOT NULL
+);
+
+
+CREATE TABLE infracoes (
+  infracao_artigo varchar(15) NOT NULL PRIMARY KEY,
+  descricao varchar(200) NOT NULL,
+  gravidade varchar(10) NOT NULL,
+  penalidade varchar(30) NOT NULL
+);
+
+CREATE TABLE pessoa (
+  cpf varchar(14) NOT NULL PRIMARY KEY,
+  nome varchar(40) NOT NULL,
+  funcao varchar(30) NOT NULL,
+  senha varchar(30) NOT NULL
+  
+);
+
+CREATE TABLE ocorrencias (
+  codigo int(15) NOT NULL PRIMARY KEY,
+  tipo varchar(100) NOT NULL,
+  etapa_processo varchar(15) NOT NULL,
+  estudante_mat int(16) NOT NULL REFERENCES estudante(matricula),
+  status_de_conclusao varchar(15) NOT NULL,
+  responsavel_ocor_cpf varchar(14) NOT NULL,
+  servidor_responsavel varchar(30) NOT NULL,
+  descrição varchar(200) NOT NULL,
+  infracao_artigo varchar(15) NOT NULL REFERENCES infracoes(infracao_artigo)
+);
+
+INSERT INTO pessoa (cpf, nome, funcao, senha) 
+VALUES ('12345678912345', 'Adm', 'Administrador', '12345');
