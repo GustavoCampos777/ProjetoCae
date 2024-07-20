@@ -6,7 +6,7 @@
 
 <body>
     <h1>Login do Sistema</h1>
-    <form method="post" action="validarLogin.php">
+    <form method="post" action="validarLoginAdm.php">
         <table>
 
             <tr>
