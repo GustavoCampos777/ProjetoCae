@@ -1,7 +1,6 @@
 CREATE TABLE estudante (
   matricula varchar(16) NOT NULL PRIMARY KEY,
   nome varchar(50) NOT NULL,
-  foto varchar(50) NOT NULL,
   contato_celular varchar(14) NOT NULL,
   contato_responsaveis varchar(14) NOT NULL,
   contato_email varchar(100) NOT NULL
